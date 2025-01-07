@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html style="background-color: #504f4f;">
+<head>
+    <fieldset style="background: #000000;color: rgb(255, 230, 0);">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        select, input[type="file"] {
+            margin-top: 5px;
+        }
+        .gender {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        input[type="checkbox"] {
+            margin-top: 10px;
+        }
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 5px 10px;
+        }
+        input[type="reset"] {
+            margin-top: 15px;
+            padding: 5px 10px;
+        }
+        table {
+            max-width: 90%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            background: rgb(0, 0, 0);
+            border: 1px solid #ff0000;
+            color: rgb(0, 255, 76);
+        }
+        table th, table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #9e9e9e;
+        }
+        table th {
+            background-color: #000000;
+            color: rgb(255, 251, 0);
+        }
+        table tr:nth-child(even) {
+            background-color: #000000;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #00ff80;
+            color: rgb(255, 0, 0);
+        }
+    </style>
+    <script>
+        function displayData() {
+            const form = document.forms['registrationForm'];
+            const table = document.getElementById('dataTable');
+
+            const row = table.insertRow(-1);
+            row.innerHTML = `
+                <td>${form.firstName.value}</td>
+                <td>${form.lastName.value}</td>
+                <td>${form.dob.value}</td>
+                <td>${form.department.value}</td>
+                <td>${form.gender.value}</td>
+                <td>${form.marks.value}</td>
+                <td>${form.resume.files[0]?.name || 'No file uploaded'}</td>
+            `;
+
+            form.reset();
+            return false;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>T&P Registration Form</h2>
+    <form name="registrationForm" onsubmit="return displayData()">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+            <option value="ComputerScience">Computer Science</option>
+            <option value="Clectronics">Elec and Comp. Sci.</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Civil">Civil</option>
+            <option value="Biomedical">Biomedical</option>
+        </select>
+        
+        <label for="gender">Gender:</label>
+        <span class="gender">
+            <input type="radio" id="male" name="gender" value="Male" required> Male
+        </span>
+        <span class="gender">
+            <input type="radio" id="female" name="gender" value="Female" required> Female
+        </span>
+        
+        <label for="marks">Semester-wise Marks:</label>
+        <input type="text" id="marks" name="marks" required>
+        
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" required>
+        
+        <label>
+            <input type="checkbox" name="terms" required> I accept the terms and conditions
+        </label>
+        
+        <input type="submit" value="Submit">
+        <input type="reset"  value="Reset">
+    </form></feildset>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+                <th>Department</th>
+                <th>Gender</th>
+                <th>Semester-wise Marks</th>
+                <th>Resume</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</body>
+</html>

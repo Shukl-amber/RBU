@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100%, initial-scale=1.0">
+    <title>HTML FORM</title>
+</head>
+<body style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">    
+    <form>  <center>
+        <fieldset><legend>Input Form</legend>
+        First Name: <input type="text" name="First Name" placeholder="          Enter First Name" required><br><br>
+        Last Name:  <input type="text" name="First Name" placeholder="          Enter First Name" required><br><br>
+        Password:   <input type="password" name="Enter Password" placeholder="     Enter 6 Digit Password" pattern="[A-Za-z0-9]"><br><br>
+        Mobile Number: <input type="number" name="Mobile Number" placeholder="            Enter Number" pattern="[0-9]"><br><br>
+        Gender: <input type="radio" name="Gender" value="Male">Male
+        <input type="radio" name="Gender" value="Female">Female<br><br>
+        Date Of Birth: <input type="date" name="DOB"><br><br>
+        Choose City: <select name="city " multiple>
+            <option value="Mumbai">Mumbai</option> 
+            <option value="Pune">Pune</option> 
+            <option value="Nagpur">Nagpur</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+        </select><br><br>
+        Address: <textarea rows="2" cols="20">Enter address here....</textarea><br><br>   
+        Languages Known: <input type="checkbox" name="C" value="C"> C
+        <input type="checkbox" name="Py" value="Python"> Python
+        <input type="checkbox" name="Java" value="Java"> Java
+        <input type="checkbox" name="C++" value="C++"> C++ <br><br>
+        Submit Resume: <input type="file" name="resume" accept="" multiple><br><br>
+        <input type="submit" name="Submit Data" value="Submit">
+        <input type="reset"  name="Reset Data"  value="reset">
+
+    </center></form></fieldset>
+</body>
+</html>

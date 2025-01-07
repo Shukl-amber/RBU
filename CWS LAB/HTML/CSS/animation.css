@@ -1,0 +1,15 @@
+div{
+    width: 400px;
+    height: 400px;
+    background: green;
+    animation-name: animation1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes animation1 {
+    0%{background: lightgreen;text-align: center;}
+    25%{background-color: aqua;text-align: right;}
+    50%{background-color: red;text-align: left;}
+    75%{background-color: gold;text-align: bottom;}
+    100%{background-color: lightgreen;text-align: center;}
+}

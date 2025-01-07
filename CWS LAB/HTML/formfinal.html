@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>T&P Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        select, input[type="file"] {
+            margin-top: 5px;
+        }
+        .gender {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        input[type="checkbox"] {
+            margin-top: 10px;
+        }
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>T&P Registration Form</h2>
+    <form action="/submit" method="post">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+            <option value="computerScience">Computer Science</option>
+            <option value="electronics">Electronics</option>
+            <option value="mechanical">Mechanical</option>
+            <!-- Add other departments as needed -->
+        </select>
+        
+        <label for="gender">Gender:</label>
+        <span class="gender">
+            <input type="radio" id="male" name="gender" value="male" required> Male
+        </span>
+        <span class="gender">
+            <input type="radio" id="female" name="gender" value="female" required> Female
+        </span>
+        
+        <label for="marks">Semester-wise Marks:</label>
+        <input type="text" id="marks" name="marks" required>
+        
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" required>
+        
+        <label>
+            <input type="checkbox" name="terms" required> I accept the terms and conditions
+        </label>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
