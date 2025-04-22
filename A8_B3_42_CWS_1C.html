@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels</title>
+</head>
+<body>
+    <script>
+    let paragraph = "Test Paragraph Test Paragraph Test Paragraph Test Paragraph Test Paragraph";
+    let vowels = "aeiouAEIOU";
+    let count = 0;
+
+    for (let i = 0; i < paragraph.length; i++)
+        for (let j = 0; j < vowels.length; j++)
+            if (paragraph[i]==vowels[j]) 
+                count++;
+    
+    alert("Number of vowels: "+count);
+
+    </script>
+</body>
+</html>

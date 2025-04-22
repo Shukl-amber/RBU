@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Salary Increment</title>
+</head>
+<body>
+    <script>
+        // Employee class
+        class Employee {
+            constructor(name, empid, salary, yearsOfExperience) {
+                this.name = name;
+                this.empid = empid;
+                this.salary = salary;
+                this.yearsOfExperience = yearsOfExperience;
+            }
+
+            // Method to add increment based on years of experience
+            addIncrement() {
+                if (this.yearsOfExperience > 3) {
+                    this.salary += this.salary * 0.10; // 10% increment
+                } else {
+                    this.salary += this.salary * 0.05; // 5% increment
+                }
+            }
+        }
+
+        // Initialize an array to store employees
+        let employees = [];
+
+        // Prompt for number of employees
+        let numEmployees = parseInt(prompt("How many employees do you want to add?"));
+
+        // Add employees based on input
+        for (let i = 0; i < numEmployees; i++) {
+            let name = prompt("Enter name for Employee " + (i + 1));
+            let empid = prompt("Enter Employee ID for " + name);
+            let salary = parseFloat(prompt("Enter salary for " + name));
+            let yearsOfExperience = parseInt(prompt("Enter years of experience for " + name));
+
+            let employee = new Employee(name, empid, salary, yearsOfExperience);
+            employees.push(employee);
+        }
+
+        // Add increment for each employee and show result
+        for (let employee of employees) {
+            employee.addIncrement();
+            alert(`${employee.name} (ID: ${employee.empid}) now has a salary of $${employee.salary.toFixed(2)}`);
+        }
+
+        // Confirm if the user wants to add more increments
+        let addMoreIncrements = confirm("Do you want to add another increment for the employees?");
+        if (addMoreIncrements) {
+            for (let employee of employees) {
+                employee.addIncrement();
+                alert(`${employee.name} (ID: ${employee.empid}) now has a salary of $${employee.salary.toFixed(2)}`);
+            }
+        }
+    </script>
+</body>
+</html>
